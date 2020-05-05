@@ -1,0 +1,53 @@
+logging:
+    level:
+        root: INFO
+        tk: DEBUG
+        com.mp.dao: trace
+        com.trs.trsirp: INFO
+#  pattern:
+#    console: '%p%m%n'
+spring:
+    datasource:
+        name: db_wallet
+        url: jdbc:mysql://127.0.0.1:3306/apay_payment?useSSL=false&useUnicode=true&characterEncoding=utf-8
+        username: root
+        password: 19921116
+        driver-class-name: com.mysql.jdbc.Driver
+#redis 配置信息
+    redis:
+        host: 127.0.0.1
+        port: 6379
+#password: 123456
+        database: 2
+        timeout: 1000
+#rabbitmq 配置信息
+#  rabbitmq:
+#    host: 127.0.0.1
+#    port: 5672
+#    username: guest
+#    password: guest
+#    virtual-host: /
+#    publisher-confirms: true
+# mail配置
+    mail:
+        host: smtpdm.aliyun.com
+        password: 7qDXndl2zU9hx7Fs
+        properties:
+            mail:
+                smtp:
+                    auth: true
+                    starttls:
+                        enable: true
+                        required: true
+        username: beepay@automail.linyizp.com
+
+
+
+#添加Thymeleaf配置
+thymeleaf:
+    cache: false
+    prefix: classpath:/templates/
+    suffix: .html
+    mode: HTML5
+    encoding: UTF-8
+    content-type: text/html
