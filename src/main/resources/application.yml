@@ -2,6 +2,10 @@ server:
     port: 8885
     tomcat:
         uri-encoding: UTF-8
+
+swagger2:
+    enable: true
+
 logging:
     level:
         root: INFO
