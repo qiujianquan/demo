@@ -1,14 +1,18 @@
-package com.example.demo.STOMPWebSocket.web;
+package com.example.demo.websocketServer.STOMPWebSocket.web;
 
 
-import com.example.demo.STOMPWebSocket.model.ReceiveMessage;
-import com.example.demo.STOMPWebSocket.service.RestFulService;
+import com.example.demo.websocketServer.STOMPWebSocket.model.ReceiveMessage;
+import com.example.demo.websocketServer.STOMPWebSocket.model.ResponseMessage;
+import com.example.demo.websocketServer.STOMPWebSocket.service.RestFulService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.messaging.handler.annotation.MessageMapping;
+import org.springframework.messaging.handler.annotation.SendTo;
 import org.springframework.messaging.simp.SimpMessagingTemplate;
 import org.springframework.messaging.simp.user.SimpUser;
 import org.springframework.messaging.simp.user.SimpUserRegistry;
+import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
@@ -48,6 +52,24 @@ public class RestFulController {
         }
 
     }
+
+
+    @MessageMapping("/subscribe21")
+    //@SendTo
+    public void subscribe(String rm) {
+        System.out.println("服务端接收到广播消息："+rm);
+        for(int i =1;i<=5;i++) {
+            //广播使用convertAndSend方法，第一个参数为目的地，和js中订阅的目的地要一致
+            template.convertAndSend("/topic/getResponse", rm);
+            try {
+                Thread.sleep(1000);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }
+
+    }
+
 
     /**
      * @Description:点对点
@@ -91,6 +113,14 @@ public class RestFulController {
             System.out.println("用户" + i++ + "---" + user);
         }
     }
+
+
+
+
+
+
+
+
 }
 
 

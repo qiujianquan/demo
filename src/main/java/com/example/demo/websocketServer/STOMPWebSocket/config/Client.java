@@ -1,5 +1,6 @@
-package com.example.demo.STOMPWebSocket.config;
+package com.example.demo.websocketServer.STOMPWebSocket.config;
 
+import com.example.demo.websocketServer.STOMPWebSocket.model.ReceiveMessage;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.messaging.simp.stomp.StompFrameHandler;
@@ -43,15 +44,27 @@ public class Client {
 
         String sendMsg="我是java版的stomp over websocket的客户端";
 
-        sendMsg=(args!=null&&args.length!=0)? args[0]:sendMsg;
+
+//        ReceiveMessage sendMsg=new ReceiveMessage();
+//        sendMsg.setUser("1");
+//        sendMsg.setMsg("我是java版的stomp over websocket的客户端");
+
+//        String sendMsg="1";
+
+//        sendMsg=(args!=null&&args.length!=0)? args[0]:sendMsg;
 
         Client myClient = new Client();
         //读取配置文件
         //WebSocketConfig=myClient.readConfig();
 
-        String uri = "ws://172.16.0.11:8885/socket";
-        String subscribe = "/topic/notice";
-        String send = "/app/change-notice";
+        String uri = "ws://127.0.0.1:8885/webServer";
+
+        //用于配置 订阅消息  所返 返回的接受 地址  比如 订阅 地址是 subscribe21    那么就是在controller 里的 @MessageMapping("/subscribe21")
+        // 在当前mapping 下会有一个 相同的key 作为订阅推送地址  退回给客户端 客户端需要 监控 当前服务端定义的 回推地址 /topic/getResponse
+        String subscribe = "/topic/getResponse";
+        String send = "/app/subscribe21";
+
+
 //        if (WebSocketConfig!=null) {
 //            //连接到客户端
 //            myClient.runStompClient(myClient, uri,subscribe,send,sendMsg);
@@ -63,7 +76,7 @@ public class Client {
 //            LOGGER.info("使用默认参数加载客户端");
 //        }
         //连接到客户端
-        myClient.runStompClient(myClient, uri,subscribe,send,sendMsg);
+        myClient.runStompClient(myClient, uri,subscribe,send,sendMsg.toString());
         LOGGER.info("成功使用配置文件加载客户端");
 
         while (!myClient.RecvFlag) {

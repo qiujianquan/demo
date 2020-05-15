@@ -1,4 +1,4 @@
-package com.example.demo.STOMPWebSocket.model;
+package com.example.demo.websocketServer.STOMPWebSocket.model;
 
 /**
  * Created by hui.yunfei@qq.com on 2019/6/4

@@ -1,6 +1,6 @@
-package com.example.demo.STOMPWebSocket.config;
+package com.example.demo.websocketServer.STOMPWebSocket.config;
 
-import com.example.demo.STOMPWebSocket.utils.UserInterceptor;
+import com.example.demo.websocketServer.STOMPWebSocket.utils.UserInterceptor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.messaging.simp.config.ChannelRegistration;
@@ -43,6 +43,8 @@ public class WebSocketConfig implements WebSocketMessageBrokerConfigurer {
         registry.setApplicationDestinationPrefixes("/app");
         //registry.setUserDestinationPrefix("/user");这句话表示给指定用户发送一对一的主题前缀是"/user"。
     }
+
+
 
     /**
      * 配置客户端入站通道拦截器

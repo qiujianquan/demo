@@ -1,4 +1,4 @@
-package com.example.demo.STOMPWebSocket.web;
+package com.example.demo.websocketServer.STOMPWebSocket.web;
 
 
 import org.java_websocket.client.WebSocketClient;

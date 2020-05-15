@@ -1,4 +1,4 @@
-package com.example.demo.STOMPWebSocket.model;
+package com.example.demo.websocketServer.STOMPWebSocket.model;
 
 import java.security.Principal;
 

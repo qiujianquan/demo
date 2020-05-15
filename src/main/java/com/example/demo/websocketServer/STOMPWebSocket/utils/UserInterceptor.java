@@ -1,6 +1,6 @@
-package com.example.demo.STOMPWebSocket.utils;
+package com.example.demo.websocketServer.STOMPWebSocket.utils;
 
-import com.example.demo.STOMPWebSocket.model.User;
+import com.example.demo.websocketServer.STOMPWebSocket.model.User;
 import org.springframework.messaging.Message;
 import org.springframework.messaging.MessageChannel;
 import org.springframework.messaging.simp.SimpMessageHeaderAccessor;

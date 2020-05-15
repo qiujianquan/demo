@@ -1,6 +1,6 @@
-package com.example.demo.STOMPWebSocket.service.impl;
+package com.example.demo.websocketServer.STOMPWebSocket.service.impl;
 
-import com.example.demo.STOMPWebSocket.service.RestFulService;
+import com.example.demo.websocketServer.STOMPWebSocket.service.RestFulService;
 import org.springframework.stereotype.Service;
 
 /**

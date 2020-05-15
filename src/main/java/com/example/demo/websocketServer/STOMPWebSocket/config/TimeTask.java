@@ -1,6 +1,7 @@
-package com.example.demo.STOMPWebSocket.config;
+package com.example.demo.websocketServer.STOMPWebSocket.config;
 
-import com.example.demo.STOMPWebSocket.service.RestFulService;
+import com.example.demo.websocketServer.STOMPWebSocket.service.RestFulService;
+import org.java_websocket.server.WebSocketServer;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,7 +10,9 @@ import org.springframework.scheduling.annotation.EnableScheduling;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
 
+import java.io.IOException;
 import java.util.Date;
+import java.util.concurrent.CopyOnWriteArraySet;
 
 /**
  * Created by hui.yunfei@qq.com on 2019/6/4
