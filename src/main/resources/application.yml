@@ -82,3 +82,7 @@ thymeleaf:
     mode: HTML5
     encoding: UTF-8
     content-type: text/html
+
+staff:
+    age: '{one:''17'', two : ''18'', three : ''19'', four: ''20''}'
+    names: 张三,李四,王五
