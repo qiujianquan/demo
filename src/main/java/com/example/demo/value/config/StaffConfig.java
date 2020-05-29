@@ -32,6 +32,9 @@ public class StaffConfig {
     @Value ("#{${staff.age}['zero'] ?: 0}")
     private Integer ageWithDefaultValue;
 
+    @Value ("${staff.password}")
+    private String password;
+
     //使用SpEL读取java环境变量
     @Value ("#{systemProperties['java.home']}")
     private String javaHome;

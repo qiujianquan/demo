@@ -86,3 +86,12 @@ thymeleaf:
 staff:
     age: '{one:''17'', two : ''18'', three : ''19'', four: ''20''}'
     names: 张三,李四,王五
+    #错误示范  boot集成封装之后加密串会边长多加了很多其他参数 所以从windos和linux加密的并不能在这里使用
+    #password: ENC(QN4SOBN7Ufg1x3yOvnw97A==)
+    #正确spring boot示范 哈哈
+    password: ENC(McaserZcmcoz70GBojBI9032gP+jvB9cby2TmZ5JHRs2BS00jrZy73f1SCmzGSkU)
+
+jasypt:
+    encryptor:
+        password: 123456
+
