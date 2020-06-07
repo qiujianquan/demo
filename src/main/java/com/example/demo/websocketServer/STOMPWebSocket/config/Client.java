@@ -57,12 +57,16 @@ public class Client {
         //读取配置文件
         //WebSocketConfig=myClient.readConfig();
 
-        String uri = "ws://127.0.0.1:8885/webServer";
+//        String uri = "ws://127.0.0.1:8885/webServer";
+
+        String uri ="ws://wstest.asptest.top:80";
 
         //用于配置 订阅消息  所返 返回的接受 地址  比如 订阅 地址是 subscribe21    那么就是在controller 里的 @MessageMapping("/subscribe21")
         // 在当前mapping 下会有一个 相同的key 作为订阅推送地址  退回给客户端 客户端需要 监控 当前服务端定义的 回推地址 /topic/getResponse
-        String subscribe = "/topic/getResponse";
-        String send = "/app/subscribe21";
+//        String subscribe = "/topic/getResponse";
+//        String send = "/app/subscribe21";
+        String subscribe = "/topic/market.depth";
+        String send = "market.depth";
 
 
 //        if (WebSocketConfig!=null) {
@@ -114,6 +118,10 @@ public class Client {
             }
         });
     }
+
+
+
+
 
     public ListenableFuture<StompSession> connect(String url) {
 
