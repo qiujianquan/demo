@@ -2,7 +2,7 @@ package com.example.demo.aspx;
 
 import io.netty.bootstrap.Bootstrap;
 import io.netty.channel.*;
-import io.netty.channel.ChannelInitializer;
+
 import io.netty.channel.nio.NioEventLoopGroup;
 import io.netty.channel.socket.SocketChannel;
 import io.netty.channel.socket.nio.NioSocketChannel;
@@ -43,7 +43,10 @@ public class MyClient  {
             boot.option(ChannelOption.SO_KEEPALIVE,true)
                     .group(group)
                     .channel(NioSocketChannel.class)
-                    .handler(new ChannelInitializer());//引用自己的协议
+
+                    //引用自己的协议
+                    .handler(new ChannelInitializer());
+
              //ws协议类型 
             //URI websocketURI = new URI("ws://47.244.56.4:9688");
             //URI websocketURI = new URI("ws://172.16.16.50:9688");
@@ -81,10 +84,10 @@ public class MyClient  {
 //                System.out.println(JSON.toJSONString(frameUnSub4));
 //                channel.writeAndFlush(frameUnSub4);
                 
-                TextWebSocketFrame frameSub5 = new TextWebSocketFrame("{\"event\":\"sub\",\"topic\":\"market.kline\",\"period\":\"60\",\"symbol\":\"700036\"}") ;
-                System.out.println(JSON.toJSONString(frameSub5));
-                channel.writeAndFlush(frameSub5);
-                
+//                TextWebSocketFrame frameSub5 = new TextWebSocketFrame("{\"event\":\"sub\",\"topic\":\"market.kline\",\"period\":\"60\",\"symbol\":\"700036\"}") ;
+//                System.out.println(JSON.toJSONString(frameSub5));
+//                channel.writeAndFlush(frameSub5);
+//
 //                TextWebSocketFrame frameSub9 = new TextWebSocketFrame("{\"event\":\"sub\",\"topic\":\"market.newPrice\",\"symbol\":\"700036\"}") ;
 //                System.out.println(JSON.toJSONString(frameSub9));
 //                channel.writeAndFlush(frameSub9);

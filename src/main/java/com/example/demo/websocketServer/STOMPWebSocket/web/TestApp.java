@@ -26,7 +26,7 @@ public class TestApp {
                     JSONObject jsonObject=new JSONObject();
                     jsonObject.put("topic","market.depth");
                     jsonObject.put("period","60");
-                    jsonObject.put("symbol","700065");
+                    jsonObject.put("symbol","700066");
                     jsonObject.put("id",System.currentTimeMillis());
                     jsonObject.put("event","sub");
                     send(jsonObject.toJSONString());
