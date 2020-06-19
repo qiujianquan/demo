@@ -1,5 +1,6 @@
 package com.example.demo;
 
+import com.example.demo.annotation.service.impl.UserAnnotation10;
 import com.example.demo.cglib.service.impl.Service1;
 import com.example.demo.cglib.service.impl.Service2;
 import com.example.demo.cglib.service.impl.Service3;
@@ -23,9 +24,9 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.cglib.proxy.*;
 
 
+import java.lang.annotation.Annotation;
+import java.lang.reflect.*;
 import java.lang.reflect.InvocationHandler;
-import java.lang.reflect.InvocationTargetException;
-import java.lang.reflect.Method;
 import java.lang.reflect.Proxy;
 import java.math.BigDecimal;
 import java.util.ArrayList;
@@ -399,6 +400,19 @@ public void cglibTest1() {
         Service3 proxy = (Service3) enhancer.create();
         System.out.println(proxy.m1());
         System.out.println(proxy.m2());
+    }
+
+
+    @Test
+    public void m333() {
+        TypeVariable<Class<UserAnnotation10>>[] typeParameters = UserAnnotation10.class.getTypeParameters();
+        for (TypeVariable<Class<UserAnnotation10>> typeParameter : typeParameters) {
+            System.out.println(typeParameter.getName() + "变量类型注解信息：");
+            Annotation[] annotations = typeParameter.getAnnotations();
+            for (Annotation annotation : annotations) {
+                System.out.println(annotation);
+            }
+        }
     }
 
 
