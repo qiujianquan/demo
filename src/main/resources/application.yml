@@ -95,3 +95,12 @@ jasypt:
     encryptor:
         password: 123456
 
+
+huobi:
+    api:
+        key: dab4c45e6f-ba15dc1f-bbb82ed2-63cd0
+        secret: c26dac87-2ead0c5b-665f405b-0f5f9
+    address: https://api.hbdm.com
+    address1: https://api.btcgateway.pro
+    contractContractInfo: /api/v1/contract_contract_info
+    swapContractInfo: /swap-api/v1/swap_contract_info

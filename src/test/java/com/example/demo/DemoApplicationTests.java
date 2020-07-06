@@ -5,6 +5,9 @@ import com.example.demo.cglib.service.impl.Service1;
 import com.example.demo.cglib.service.impl.Service2;
 import com.example.demo.cglib.service.impl.Service3;
 import com.example.demo.cglib.service.impl.Service4;
+import com.example.demo.huobi.dto.HuoBiReqDto;
+import com.example.demo.huobi.dto.SwapContractInfoReqDto;
+import com.example.demo.huobi.service.HuobiService;
 import com.example.demo.lambda.util.MatheUtil;
 import com.example.demo.lambda.constants.StatisticsType;
 import com.example.demo.lambda.service.Calculation;
@@ -41,6 +44,9 @@ class DemoApplicationTests {
     String yan;
     @Autowired
     private StringEncryptor stringEncryptor;
+
+    @Autowired
+    private HuobiService huobiService;
 
     @Test
     public void contextLoads() {
@@ -414,6 +420,15 @@ public void cglibTest1() {
             }
         }
     }
+
+
+
+    @Test
+    public void testHuobi() {
+        huobiService.contractContractInfo(new HuoBiReqDto());
+        huobiService.swapContractInfo(new SwapContractInfoReqDto());
+    }
+
 
 
 }
