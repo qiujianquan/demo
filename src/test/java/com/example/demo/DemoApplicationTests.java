@@ -12,6 +12,7 @@ import com.example.demo.lambda.util.MatheUtil;
 import com.example.demo.lambda.constants.StatisticsType;
 import com.example.demo.lambda.service.Calculation;
 import com.example.demo.lambda.service.Notice;
+import com.example.demo.okex.service.OkexService;
 import com.example.demo.proxy.service.IService;
 import com.example.demo.proxy.service.IUserService;
 import com.example.demo.proxy.service.impl.CostTimeInvocationHandler;
@@ -25,6 +26,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.cglib.proxy.*;
+import util.Web.GoWeb;
 
 
 import java.lang.annotation.Annotation;
@@ -47,6 +49,9 @@ class DemoApplicationTests {
 
     @Autowired
     private HuobiService huobiService;
+
+    @Autowired
+    private OkexService okexService;
 
     @Test
     public void contextLoads() {
@@ -429,6 +434,17 @@ public void cglibTest1() {
         huobiService.swapContractInfo(new SwapContractInfoReqDto());
     }
 
+
+    @Test
+    public void testOkex() {
+        okexService.contractContractInfo();
+        okexService.swapContractInfo();
+    }
+
+    @Test
+    public void test(){
+        GoWeb.goPrsticideWeb();
+    }
 
 
 }

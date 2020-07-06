@@ -104,3 +104,8 @@ huobi:
     address1: https://api.btcgateway.pro
     contractContractInfo: /api/v1/contract_contract_info
     swapContractInfo: /swap-api/v1/swap_contract_info
+
+okex:
+    address: https://www.okex.com
+    contractContractInfo: /api/futures/v3/instruments
+    swapContractInfo: /api/swap/v3/instruments
